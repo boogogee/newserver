@@ -1,5 +1,7 @@
 #! /bin/bash
 
+#Ubuntu 16.04 LTS
+
 read -p "Sudo user username?" USER
 if [[ ! $PUB ]]; then read -p "SSH pubkey: " PUB; fi
 
