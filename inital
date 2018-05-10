@@ -4,6 +4,12 @@
 
 read -p "Sudo user username?" USER
 if [[ ! $PUB ]]; then read -p "SSH pubkey: " PUB; fi
+read -p "Hostname" HOSTNAME
+
+#setup hostname
+hostnamectl set-hostname $HOSTNAME
+IP=$(curl -s icanhazip.com)
+echo "$IP   $HOSTNAME" >> /etc/hosts
 
 #add User and sudo
 adduser $USER
